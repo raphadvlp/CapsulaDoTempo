@@ -64,7 +64,25 @@ function stopRecording() {
   clearInterval(recordingInterval);
 }
 
-uploadButton.addEventListener("click", () => {
-  // Placeholder para upload para o Google Drive
-  alert("Função de upload para Google Drive ainda não implementada.");
+uploadButton.addEventListener("click", async () => {
+  const blob = new Blob(recordedChunks, { type: "video/webm" });
+
+  const formData = new FormData();
+  formData.append("video", blob, "gravacao.webm");
+
+  try {
+    const response = await fetch("/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      alert("Upload realizado com sucesso!");
+    } else {
+      alert("Erro no upload");
+    }
+  } catch (error) {
+    console.error("Erro ao enviar para o Google Drive: ", error);
+    alert("Erro no upload");
+  }
 });
