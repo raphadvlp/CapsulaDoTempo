@@ -68,7 +68,7 @@ uploadButton.addEventListener("click", async () => {
   const blob = new Blob(recordedChunks, { type: "video/webm" });
 
   const formData = new FormData();
-  formData.append("video", blob, "gravacao.webm");
+  formData.append("video", blob, "gravacao.webm"); // Certifique-se que o nome do arquivo está correto.
 
   try {
     const response = await fetch("/upload", {

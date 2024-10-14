@@ -31,7 +31,7 @@ async function uploadToDrive(filePath, fileName) {
   };
 
   const media = {
-    mimeType: "video/mp4",
+    mimeType: "video/webm",
     body: fs.createReadStream(filePath),
   };
 
@@ -49,6 +49,11 @@ async function uploadToDrive(filePath, fileName) {
 
 // Rota para upload de vídeo
 app.post("/upload", upload.single("video"), async (req, res) => {
+  console.log("Arquivo recebido:", req.file); // Adicione este log
+  if (!req.file) {
+    return res.status(400).send("Nenhum arquivo foi enviado.");
+  }
+
   const tempFilePath = req.file.path;
   const fileName = req.file.originalname;
 
@@ -61,6 +66,7 @@ app.post("/upload", upload.single("video"), async (req, res) => {
 
     res.status(200).send("Upload realizado com sucesso!");
   } catch (error) {
+    console.error("Erro no upload: ", error);
     res.status(500).send("Erro no upload: " + error);
   }
 });
