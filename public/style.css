@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0; /* Remove a margem padrão */
+  padding: 0; /* Remove o padding padrão */
+}
+
+.container {
+  text-align: center;
+  padding: 20px; /* Adiciona um pouco de padding */
+}
+
+video {
+  width: 100%; /* Ajusta a largura para 100% */
+  max-width: 600px; /* Define uma largura máxima */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px; /* Aumenta o tamanho do botão */
+  font-size: 16px; /* Aumenta a fonte */
+  margin: 5px; /* Adiciona um espaço entre os botões */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Arredonda os cantos dos botões */
+  background-color: #007bff; /* Define uma cor de fundo */
+  color: white; /* Define a cor do texto */
+}
+
+button:disabled {
+  background-color: #ccc; /* Define uma cor para botões desativados */
+  cursor: not-allowed; /* Muda o cursor para indicar que não é clicável */
+}
+
+@media (max-width: 600px) {
+  /* Estilos para dispositivos com largura máxima de 600px */
+  button {
+    width: 100%; /* Botões ocupam toda a largura da tela */
+  }
+
+  video {
+    max-width: 100%; /* Vídeo ocupa toda a largura da tela */
+  }
+}

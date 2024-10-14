@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gravar e Enviar Vídeo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Gravar e Enviar Vídeo</h1>
+      <video id="videoElement" autoplay muted></video>
+      <video id="recordedVideo" controls style="display: none"></video>
+      <div>
+        <button id="startRecording">Iniciar Gravação</button>
+        <button id="stopRecording" disabled>Parar Gravação</button>
+        <button id="uploadDrive" disabled>Enviar para Google Drive</button>
+      </div>
+      <a id="downloadLink" style="display: none">Baixar Vídeo</a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
