@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gravar e Enviar Vídeo</title>
+    <title>Gravação de Vídeo</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Gravar e Enviar Vídeo</h1>
-      <video id="videoElement" autoplay muted></video>
-      <video id="recordedVideo" controls style="display: none"></video>
+      <h1>Gravação de Vídeo</h1>
+      <video id="video" controls></video>
       <div>
-        <button id="startRecording">Iniciar Gravação</button>
-        <button id="stopRecording" disabled>Parar Gravação</button>
+        <button id="start">Iniciar Gravação</button>
+        <button id="stop" disabled>Parar Gravação</button>
         <button id="uploadDrive" disabled>Enviar para Google Drive</button>
       </div>
-      <a id="downloadLink" style="display: none">Baixar Vídeo</a>
+      <div id="timer">Tempo de Gravação: 0s</div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
